@@ -29,8 +29,8 @@ class Instructor extends Person {
     }
   }
   
-  // Student
-  class Student extends Person {
+// Student
+class Student extends Person {
     constructor(attributes) {
         super(attributes);
         this.previousBackground = attributes.previousBackground;
@@ -49,19 +49,50 @@ class Instructor extends Person {
     sprintChallenge(subject) {
         return `${this.name} has begun sprint challenge on ${subject}.`;
     }
-  }
+}
 
-    // Project Manager
-    class ProjectManagers extends Instructor {
-        constructor(attributes) {
-            super(attributes);
-            this.gradClassName = attributes.gradClassName;
-            this.favInstructor = attributes.favInstructor;
-        }
-        standUp(channel) {
-        return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
-        }
-        debugsCode(student, subject) {
-        return `${this.name} debugs ${student.name}'s code on ${subject}.`;
-        }
+// Project Manager
+class ProjectManagers extends Instructor {
+    constructor(attributes) {
+        super(attributes);
+        this.gradClassName = attributes.gradClassName;
+        this.favInstructor = attributes.favInstructor;
     }
+    standUp(channel) {
+    return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
+    }
+    debugsCode(student, subject) {
+    return `${this.name} debugs ${student.name}'s code on ${subject}.`;
+    }
+}
+
+// List of Instructors
+const fred = new Instructor({
+    name: 'Fred',
+    location: 'Lambda',
+    age: 37,
+    gender: 'male',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies.`
+  });
+
+const josh = new Instructor({
+    name: 'Josh',
+    age: 30,
+    location: 'Lambda',
+    gender: 'male',
+    favLanguage: 'Python',
+    specialty: 'redux',
+    catchPhrase: `Hello class.`
+  });
+
+  const keiran = new Instructor({
+      name: 'Keiran',
+      age: 26,
+      location: 'Lambda',
+      gender: 'male',
+      favLanguage: 'Javascript',
+      specialty: 'CSS',
+      catchPhrase: `That's just hotdogs!`
+    });
