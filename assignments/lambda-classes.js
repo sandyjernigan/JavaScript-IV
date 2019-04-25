@@ -36,6 +36,7 @@ class Student extends Person {
         this.previousBackground = attributes.previousBackground;
         this.className = attributes.className;
         this.favSubjects = attributes.favSubjects;
+        this.grade = this.grade;
     }
     listsSubjects(subject1, subject2, subject3) {
         return `${this.name}'s favorite subjects are ${subject1}, ${subject2}, and ${subject3}.`;
@@ -103,7 +104,8 @@ const amber = new Student({
     gender: 'female',
     previousBackground: 'CSS',
     className: 'Full Stack Web Development',
-    favSubjects: ['HTML', 'CSS', 'Javascript']
+    favSubjects: ['HTML', 'CSS', 'Javascript'],
+    grade: 92
   });
 
 const tj = new Student({
@@ -113,7 +115,8 @@ const tj = new Student({
     gender: 'male',
     previousBackground: 'React',
     className: 'Full Stack Web Development',
-    favSubjects: ['React', 'Javascript', 'Node.js']
+    favSubjects: ['React', 'Javascript', 'Node.js'],
+    grade: 96
   });
 
 // List of Project Managers
