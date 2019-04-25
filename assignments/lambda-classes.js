@@ -27,6 +27,10 @@ class Instructor extends Person {
     grade(student, subject) {
       return `${student.name} receives a perfect score on ${subject}.`;
     }
+    changeGrade(student, changeAmount) {
+        student.grade = student.grade + changeAmount;
+        return `${student.name}'s grade changed by ${changeAmount}, the new grade is ${student.grade}.`
+    }
   }
   
 // Student
@@ -36,7 +40,7 @@ class Student extends Person {
         this.previousBackground = attributes.previousBackground;
         this.className = attributes.className;
         this.favSubjects = attributes.favSubjects;
-        this.grade = this.grade;
+        this.grade = attributes.grade;
     }
     listsSubjects(subject1, subject2, subject3) {
         return `${this.name}'s favorite subjects are ${subject1}, ${subject2}, and ${subject3}.`;
@@ -144,21 +148,33 @@ const katie = new ProjectManagers({
     favInstructor: 'Josh'
 });
 
-//Samples to test Instructors
+// Samples to test Instructors
 console.log(`Instructor ${fred.name} is from ${fred.location} and prefers ${fred.favLanguage}.`);
 console.log(`Instructor ${keiran.name} told the class \"${keiran.catchPhrase}\" during ${keiran.specialty} class.`);
 console.log(josh.speak());
 console.log(fred.demo('CSS'));
 console.log(keiran.grade(amber, 'CSS'));
 
-//Samples to test Students
+// Samples to test Students
 console.log(`${tj.name} is a student in the ${tj.className} program.`);
 console.log(amber.listsSubjects(...amber.favSubjects));
 console.log(tj.PRAssignment("DOM"));
 console.log(amber.sprintChallenge("React"));
 
-//Samples to test Project Managers
+// Samples to test Project Managers
 console.log(`${charletta.name}'s favorite Instructor is ${charletta.favInstructor}.`);
 console.log(`${katie.name} is a PM for ${katie.gradClassName}.`);
 console.log(charletta.standUp("webpt6"));
 console.log(katie.debugsCode(tj, "CSS"));
+
+// Stretch Problem
+
+    // Randomly add or subtract points to a student's grade
+    let changeAmountforGrade = Math.floor((Math.random() * 50) + 1);
+
+    // Randomize negative or positive
+    if (Math.floor(Math.floor((Math.random() * 2) + 1)) < 2) {
+        changeAmountforGrade = -changeAmountforGrade;
+    }
+
+    console.log (josh.changeGrade(amber, changeAmountforGrade));
