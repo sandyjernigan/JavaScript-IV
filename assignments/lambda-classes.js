@@ -117,7 +117,7 @@ const tj = new Student({
   });
 
 // List of Project Managers
-const charletta = new Instructor({
+const charletta = new ProjectManagers({
     name: 'Charletta',
     location: 'Lambda',
     age: 31,
@@ -129,11 +129,11 @@ const charletta = new Instructor({
     favInstructor: 'Keiran'
 });
 
-const andrew = new Instructor({
-    name: 'Josh',
+const katie = new ProjectManagers({
+    name: 'Katie',
     age: 34,
     location: 'Lambda',
-    gender: 'male',
+    gender: 'female',
     favLanguage: 'Python',
     specialty: 'redux',
     catchPhrase: `Time to code.`,
@@ -153,9 +153,9 @@ console.log(`${tj.name} is a student in the ${tj.className} program.`);
 console.log(amber.listsSubjects(...amber.favSubjects));
 console.log(tj.PRAssignment("DOM"));
 console.log(amber.sprintChallenge("React"));
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
+
+//Samples to test Project Managers
+console.log(`${charletta.name}'s favorite Instructor is ${charletta.favInstructor}.`);
+console.log(`${katie.name} is a PM for ${katie.gradClassName}.`);
+console.log(charletta.standUp("webpt6"));
+console.log(katie.debugsCode(tj, "CSS"));
