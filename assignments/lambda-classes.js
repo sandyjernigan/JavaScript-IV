@@ -37,11 +37,8 @@ class Student extends Person {
         this.className = attributes.className;
         this.favSubjects = attributes.favSubjects;
     }
-    listsSubjects() {
-        function listsOutSubjects(subject1, subject2, subject3) {
-            return `${this.name}'s favorite subjects are ${subject1}, ${subject2}, and ${subject3}.`;
-        }
-        listsOutSubjects(...this.favSubjects);
+    listsSubjects(subject1, subject2, subject3) {
+        return `${this.name}'s favorite subjects are ${subject1}, ${subject2}, and ${subject3}.`;
     }
     PRAssignment(subject) {
         return `${this.name} has submitted a PR for ${subject}.`;
@@ -150,3 +147,15 @@ console.log(`Instructor ${keiran.name} told the class \"${keiran.catchPhrase}\" 
 console.log(josh.speak());
 console.log(fred.demo('CSS'));
 console.log(keiran.grade(amber, 'CSS'));
+
+//Samples to test Students
+console.log(`${tj.name} is a student in the ${tj.className} program.`);
+console.log(amber.listsSubjects(...amber.favSubjects));
+console.log(tj.PRAssignment("DOM"));
+console.log(amber.sprintChallenge("React"));
+console.log();
+console.log();
+console.log();
+console.log();
+console.log();
+console.log();
