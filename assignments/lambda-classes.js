@@ -118,3 +118,27 @@ const tj = new Student({
     favSubjects: ['React', 'Javascript', 'Node.js']
   });
 
+  // List of Project Managers
+  const charletta = new Instructor({
+    name: 'Charletta',
+    location: 'Lambda',
+    age: 31,
+    gender: 'female',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `It is a good day.`,
+    gradClassName: 'webpt6',
+    favInstructor: 'Keiran'
+  });
+
+const andrew = new Instructor({
+    name: 'Josh',
+    age: 34,
+    location: 'Lambda',
+    gender: 'male',
+    favLanguage: 'Python',
+    specialty: 'redux',
+    catchPhrase: `Time to code.`,
+    gradClassName: 'webpt6',
+    favInstructor: 'Josh'
+  });
