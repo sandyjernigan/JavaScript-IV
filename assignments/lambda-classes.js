@@ -204,3 +204,4 @@ console.log(katie.debugsCode(tj, "CSS"));
         console.log(`${tj.name} is repeating the assignment.`);
         randomGradeChange(katie, tj);
     }
+    
