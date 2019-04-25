@@ -96,3 +96,25 @@ const josh = new Instructor({
       specialty: 'CSS',
       catchPhrase: `That's just hotdogs!`
     });
+    
+// List of Students
+const amber = new Student({
+    name: 'amber',
+    location: 'New York',
+    age: 25,
+    gender: 'female',
+    previousBackground: 'CSS',
+    className: 'Full Stack Web Development',
+    favSubjects: ['HTML', 'CSS', 'Javascript']
+  });
+
+const tj = new Student({
+    name: 'TJ',
+    age: 32,
+    location: 'Moon',
+    gender: 'male',
+    previousBackground: 'React',
+    className: 'Full Stack Web Development',
+    favSubjects: ['React', 'Javascript', 'Node.js']
+  });
+
