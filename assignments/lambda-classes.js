@@ -74,7 +74,8 @@ const fred = new Instructor({
     gender: 'male',
     favLanguage: 'JavaScript',
     specialty: 'Front-end',
-    catchPhrase: `Don't forget the homies.`
+    catchPhrase: `Don't forget the homies
+    `
   });
 
 const josh = new Instructor({
@@ -84,7 +85,7 @@ const josh = new Instructor({
     gender: 'male',
     favLanguage: 'Python',
     specialty: 'redux',
-    catchPhrase: `Hello class.`
+    catchPhrase: `Show me the code`
   });
 
   const keiran = new Instructor({
@@ -99,7 +100,7 @@ const josh = new Instructor({
     
 // List of Students
 const amber = new Student({
-    name: 'amber',
+    name: 'Amber',
     location: 'New York',
     age: 25,
     gender: 'female',
@@ -118,8 +119,8 @@ const tj = new Student({
     favSubjects: ['React', 'Javascript', 'Node.js']
   });
 
-  // List of Project Managers
-  const charletta = new Instructor({
+// List of Project Managers
+const charletta = new Instructor({
     name: 'Charletta',
     location: 'Lambda',
     age: 31,
@@ -129,7 +130,7 @@ const tj = new Student({
     catchPhrase: `It is a good day.`,
     gradClassName: 'webpt6',
     favInstructor: 'Keiran'
-  });
+});
 
 const andrew = new Instructor({
     name: 'Josh',
@@ -141,4 +142,11 @@ const andrew = new Instructor({
     catchPhrase: `Time to code.`,
     gradClassName: 'webpt6',
     favInstructor: 'Josh'
-  });
+});
+
+//Samples to test Instructors
+console.log(`Instructor ${fred.name} is from ${fred.location} and prefers ${fred.favLanguage}.`);
+console.log(`Instructor ${keiran.name} told the class \"${keiran.catchPhrase}\" during ${keiran.specialty} class.`);
+console.log(josh.speak());
+console.log(fred.demo('CSS'));
+console.log(keiran.grade(amber, 'CSS'));
