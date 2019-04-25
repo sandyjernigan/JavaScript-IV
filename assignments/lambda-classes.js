@@ -29,7 +29,7 @@ class Instructor extends Person {
     }
     changeGrade(student, changeAmount) {
         student.grade = student.grade + changeAmount;
-        return `${student.name}'s grade changed by ${changeAmount}, the new grade is ${student.grade}.`
+        return `${this.name} changed ${student.name}'s grade by ${changeAmount}, the new grade is ${student.grade}.`
     }
   }
   
@@ -51,6 +51,19 @@ class Student extends Person {
     sprintChallenge(subject) {
         return `${this.name} has begun sprint challenge on ${subject}.`;
     }
+    graduate(){
+        if (this.grade > 70) {
+            console.log(`${this.name} is ready to graduate!`)
+            return true;
+        } else {
+            let pronoun = 'his';
+            if(this.gender === 'female') { 
+                pronoun = 'her';
+             }
+            console.log(`${this.name} will have to go back to increase ${pronoun} score.`)
+            return false;
+        }
+    } 
 }
 
 // Project Manager
@@ -170,11 +183,24 @@ console.log(katie.debugsCode(tj, "CSS"));
 // Stretch Problem
 
     // Randomly add or subtract points to a student's grade
-    let changeAmountforGrade = Math.floor((Math.random() * 50) + 1);
+    function randomGradeChange(grader, student) {
+        let changeAmountforGrade = Math.floor((Math.random() * 50) + 1);
 
-    // Randomize negative or positive
-    if (Math.floor(Math.floor((Math.random() * 2) + 1)) < 2) {
-        changeAmountforGrade = -changeAmountforGrade;
+        // Randomize negative or positive
+        if (Math.floor(Math.floor((Math.random() * 2) + 1)) < 2) {
+            changeAmountforGrade = -changeAmountforGrade;
+        }    
+        console.log(grader.changeGrade(student, changeAmountforGrade));
     }
+    randomGradeChange(josh, amber);
 
-    console.log (josh.changeGrade(amber, changeAmountforGrade));
+    // Added a graduate method to student
+    amber.graduate();
+
+    // TJ's score with a repeat if fails
+    randomGradeChange(katie, tj);
+    while (!tj.graduate()) {
+        console.log(`Try Again.`);
+        console.log(`${tj.name} is repeating the assignment.`);
+        randomGradeChange(katie, tj);
+    }
