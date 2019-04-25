@@ -120,6 +120,11 @@ class Humanoid extends CharacterStats {
             console.log(`${this.name} attacks with The Light's Revenge for ${damageDone}.`);
             return damageDone;
         }
+        maceHit() {
+            var damageDone = Math.floor((Math.random() * 3) + 1);
+            console.log(`${this.name} hits with a Mace for ${damageDone}.`);
+            return damageDone;
+        }
     }
     class Villain extends Humanoid {
         constructor(attributes) {
@@ -128,6 +133,11 @@ class Humanoid extends CharacterStats {
         howlingShards() {
             var damageDone = Math.floor((Math.random() * 5) + 1);
             console.log(`${this.name} attacks with Howling Shards for ${damageDone}.`);
+            return damageDone;
+        }
+        claws() {
+            var damageDone = Math.floor((Math.random() * 2) + 1);
+            console.log(`${this.name} claws does ${damageDone} damage.`);
             return damageDone;
         }
     }
@@ -141,7 +151,7 @@ class Humanoid extends CharacterStats {
         person.destroy();
         return false // false if not defeated
       } else {
-        console.log(`${person.name} now has ${person.healthPoints} health.`);
+        //console.log(`${person.name} now has ${person.healthPoints} health.`);
         return true // true. Stop attacking it's dead.
       }
     }
@@ -187,8 +197,12 @@ class Humanoid extends CharacterStats {
     console.log(`One day our hero, ${knight.name}, is attacked by ${wraith.name}.`);
 
     while (knight.healthPoints > 0 && wraith.healthPoints > 0) {
-      if (attack(knight, wraith.howlingShards())) {
-        attack(wraith, knight.lightsRevenge());
+      var doThisAction = Math.floor((Math.random() * 4) + 1);
+      switch(doThisAction) {
+          case 1: attack(knight, wraith.howlingShards());
+          case 2: attack(wraith, knight.lightsRevenge());
+          case 3: attack(knight, wraith.claws());
+          case 4: attack(wraith, knight.maceHit());
       }
     }
   
