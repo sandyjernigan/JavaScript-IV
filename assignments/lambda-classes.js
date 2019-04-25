@@ -14,7 +14,7 @@ class Person {
   }
   
 // Instructor
-class Instructor {
+class Instructor extends Person {
     constructor(attributes) {
         super(attributes);
         this.specialty = attributes.specialty;
@@ -26,5 +26,27 @@ class Instructor {
     }
     grade(student, subject) {
       return `${student.name} receives a perfect score on ${subject}.`;
+    }
+  }
+  
+  // Student
+  class Student extends Person {
+    constructor(attributes) {
+        super(attributes);
+        this.previousBackground = attributes.previousBackground;
+        this.className = attributes.className;
+        this.favSubjects = attributes.favSubjects;
+    }
+    listsSubjects() {
+        function listsOutSubjects(subject1, subject2, subject3) {
+            return `${this.name}'s favorite subjects are ${subject1}, ${subject2}, and ${subject3}.`;
+        }
+        listsOutSubjects(...this.favSubjects);
+    }
+    PRAssignment(subject) {
+        return `${this.name} has submitted a PR for ${subject}.`;
+    }
+    sprintChallenge(subject) {
+        return `${this.name} has begun sprint challenge on ${subject}.`;
     }
   }
